@@ -63,7 +63,9 @@
   transform-origin: 50% 90%;
 }
 .me-nav.menu-open .me-logo {
-  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 .me-desktop {
   display: flex;
