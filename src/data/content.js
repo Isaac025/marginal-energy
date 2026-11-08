@@ -403,6 +403,48 @@ export const services = {
   },
 };
 
+/*
+  Add this named export to src/data/content.js (or merge the object into its
+  existing exports). This matches the fields read by OurCommitment.jsx.
+*/
+export const commitment = {
+  lead: "We believe sustainable success is built together. Our commitment is to support our host communities and create lasting value through practical, people-focused initiatives.",
+  intro: {
+    heading: "Growing together with our communities",
+    body: "Marginal Energy’s Corporate Social Responsibility philosophy is grounded in the belief that sustainable success is built together. As an indigenous integrated energy company, we maintain a deep understanding of our host communities: their needs, aspirations, and expectations.",
+    keywords: [
+      "Shared value",
+      "Local opportunity",
+      "Community resilience",
+      "Long-term impact",
+    ],
+  },
+  initiatives: {
+    heading: "Experience sustainable growth and lasting impact",
+    lead: "Since inception, we have implemented policies and initiatives aimed at improving livelihoods and fostering community resilience.",
+    listTitle: "Our community initiatives",
+    image:
+      "https://marginal-energy.com/wp-content/uploads/2026/02/top-view-diverse-people-putting-their-hands-together-green-grass-background-unity-teamwork-concept_14117-374358.jpg",
+    imageAlt: "People joining hands over green grass",
+    imageCaption: "Building progress through shared effort",
+    items: [
+      { icon: "users", text: "Academic scholarships for students" },
+      { icon: "heart", text: "Support initiatives for the elderly" },
+      { icon: "tools", text: "Vocational training and skills development" },
+      { icon: "briefcase", text: "Employment opportunities for local youth" },
+      { icon: "sun", text: "Women empowerment programs" },
+    ],
+  },
+  closing: {
+    text: "Through these efforts, we aim to strengthen communities, promote self-reliance, and create lasting positive impact.",
+    steps: [
+      "Listen to local needs",
+      "Invest in opportunity",
+      "Build lasting impact",
+    ],
+  },
+};
+
 /* ---------- Our Commitment (VERIFIED) ---------- */
 export const intro = {
   heading: "Explore Marginal Energy’s commitment to sustainable growth",
@@ -429,40 +471,78 @@ export const csr = {
 };
 
 /* ---------- Health & Environment (all DRAFT) ---------- */
+/*
+  Optional expansion for src/data/content.js. Keep the export named `hse`.
+  HealthEnvironment.jsx remains compatible with the current hse.lead + hse.items
+  shape, and uses these extra fields when present.
+*/
 export const hse = {
-  lead: "Nobody should be harmed by the work we do, and the environments we operate in should be left in good condition.",
+  lead: "Health, Safety, and Environmental stewardship are fundamental to Marginal Energy’s operations. We are committed to protecting our employees, host communities, and the ecosystems in which we operate.",
+  heading: "Explore our commitment to health and environmental excellence",
+  body: "Our HSE framework is guided by strict standards, proactive risk management, and continuous improvement. We integrate sustainable practices and innovative technologies to minimize environmental impact while maintaining safe and efficient operations.",
+  image:
+    "https://marginal-energy.com/wp-content/uploads/2026/02/750pxx370px_Dec5.jpg",
+  imageAlt: "Industrial site representing health and environmental stewardship",
+  practicesHeading: "Key HSE practices include",
+  practicesLead:
+    "Through these measures, we foster a culture of safety excellence and environmental responsibility.",
   items: [
     {
-      title: "Safety first",
-      text: "Clear procedures, regular training and the authority for anyone to stop work they believe is unsafe.",
+      title: "Comprehensive Safety Training",
+      text: "Equipping employees with the skills and knowledge to identify and manage workplace risks.",
+      icon: "01",
     },
     {
-      title: "Environmental stewardship",
-      text: "We work to reduce our footprint, manage waste responsibly and restore the land and water we touch.",
+      title: "Emergency Preparedness",
+      text: "Implementing robust response plans and conducting regular drills.",
+      icon: "02",
     },
     {
-      title: "Community health",
-      text: "We listen to host communities and act on their health and environmental concerns.",
+      title: "Environmental Impact Assessments",
+      text: "Evaluating and mitigating environmental risks across our operations.",
+      icon: "03",
+    },
+    {
+      title: "Technology Integration",
+      text: "Using advanced tools to improve monitoring and control systems.",
+      icon: "04",
+    },
+    {
+      title: "Continuous Improvement",
+      text: "Regular reviews to enhance HSE performance and operational standards.",
+      icon: "05",
+    },
+    {
+      title: "Stakeholder Engagement",
+      text: "Working with employees, regulators, communities, and partners to support transparency and collaboration.",
+      icon: "06",
     },
   ],
+  closingHeading: "Committed to safety. Dedicated to the planet.",
+  closing:
+    "We keep strengthening our practices to protect people, reduce environmental impacts, and support responsible operations.",
 };
 
 /* ---------- Our Employees ---------- */
 export const people = {
-  lead: "Our people are why we can deliver. We invest in their skills and give local talent room to grow.",
+  lead: "Our people are the driving force behind Marginal Energy’s success. We believe that empowering our workforce is essential to achieving safe, innovative, and sustainable operations.",
+  heading: "Meet the experts powering Marginal Energy’s success",
+  body: "We are committed to providing a supportive and inclusive work environment that promotes professional growth, fairness, and long-term well-being.",
+  image: "/images/our-employees.jpg",
+  imageAlt: "Marginal Energy employees working together",
   items: [
     {
-      title: "Local talent first",
-      text: "We create employment opportunities for local youth.",
-    }, // VERIFIED (CSR list)
+      title: "Continuous learning and career development",
+      text: "We support professional growth and help our people build the skills they need to contribute and progress.",
+    },
     {
-      title: "Skills that last",
-      text: "Vocational training and skills development at every stage of a career.",
-    }, // VERIFIED (CSR list)
+      title: "Safe and reliable working conditions",
+      text: "We work to provide a safe, supportive environment where employees can do their best work.",
+    },
     {
-      title: "Opportunity for women",
-      text: "Women empowerment programmes that open doors in energy.",
-    }, // VERIFIED (CSR list)
+      title: "Equal opportunity and inclusion",
+      text: "We value respect, diversity, and collaboration, including gender equality and inclusion of persons with disabilities.",
+    },
   ],
 };
 
