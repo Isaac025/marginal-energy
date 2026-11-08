@@ -1,0 +1,47 @@
+/* Global tokens, reset and base typography */
+:root {
+  --ink: #06291f;     /* deep green-black: hero, footer, headings */
+  --green: #0b6b45;   /* primary brand green: logo, buttons, h3 */
+  --leaf: #7dc242;    /* bright accent: hovers, markers, light sweep */
+  --mist: #eef3ee;    /* pale tint for alternate bands */
+  --text: #24362f;
+  --font: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+img { max-width: 100%; }
+
+h2 {
+  margin: 0 0 20px;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.15;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+h3 {
+  margin: 34px 0 14px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+:focus-visible { outline: 3px solid var(--leaf); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

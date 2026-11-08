@@ -1,0 +1,253 @@
+/* Governance page. Builds on about.css (marquee, badges, keyframes). */
+
+.me-wrap.gv-head {
+  margin-bottom: 48px;
+}
+.gv-head > * {
+  max-width: 760px;
+}
+.gv-head h2 {
+  margin-bottom: 16px;
+}
+
+/* Split layouts */
+.gv-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.gv-split.gv-principles {
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: stretch;
+}
+.gv-split h2 {
+  margin-bottom: 24px;
+}
+
+/* Photo frame: wipe-in plus parallax (img rules come from .ab-ph in about.css) */
+.reveal > .gv-frame {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: var(--green);
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.4s cubic-bezier(0.7, 0, 0.2, 1);
+}
+.reveal.in > .gv-frame {
+  clip-path: inset(0);
+}
+.gv-frame.sq {
+  aspect-ratio: 1 / 1;
+}
+.gv-frame.tall {
+  min-height: 460px;
+}
+.gv-frame.wide {
+  min-height: 100%;
+}
+
+/* Keyword chips */
+.gv-keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+.gv-keys li {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 10px 22px;
+  border: 1px solid var(--green);
+  color: var(--green);
+  font-weight: 600;
+  transition: color 0.4s;
+  cursor: default;
+}
+.gv-keys li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--sun);
+  transform: translateY(101%);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.gv-keys li:hover {
+  color: var(--ink);
+}
+.gv-keys li:hover::before {
+  transform: none;
+}
+
+/* Overview steps */
+.gv-overview h2 {
+  max-width: 760px;
+  margin-bottom: 18px;
+}
+.gv-overview .me-lead {
+  max-width: 760px;
+  color: #cfe3d8;
+}
+.gv-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 72px;
+  padding-top: 44px;
+}
+.gv-steps::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--sun), rgba(255, 235, 18, 0.2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.9s cubic-bezier(0.5, 0, 0.2, 1) 0.3s;
+}
+.reveal.in .gv-steps::before {
+  transform: scaleX(1);
+}
+.gv-steps li {
+  position: relative;
+  opacity: 0;
+}
+.gv-node {
+  position: absolute;
+  top: -44px;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--sun);
+  transform: scale(0);
+  transition: transform 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.gv-num {
+  display: block;
+  margin-bottom: 12px;
+  font-size: clamp(84px, 11vw, 150px);
+  line-height: 1;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--sun);
+  transition: color 0.8s ease;
+}
+.gv-steps h3 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #fff;
+}
+.gv-steps p {
+  margin: 0;
+  line-height: 1.65;
+  color: #cfe3d8;
+}
+.reveal.in .gv-steps li {
+  opacity: 1;
+  animation: slidein 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  animation-delay: calc(0.5s + var(--i) * 0.4s);
+}
+.reveal.in .gv-node {
+  transform: scale(1);
+  transition-delay: calc(0.5s + var(--i) * 0.4s);
+  animation: pulse 2.6s ease-out infinite;
+  animation-delay: calc(1.4s + var(--i) * 0.4s);
+}
+.reveal.in .gv-num {
+  color: rgba(255, 235, 18, 0.16);
+  transition-delay: calc(0.9s + var(--i) * 0.4s);
+}
+.reveal.in .gv-steps li:hover .gv-num {
+  color: var(--sun);
+  transition-delay: 0s;
+}
+
+/* Recognition */
+.gv-recog {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+.gv-badges {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.gv-badges .ab-badge {
+  padding: 30px 26px;
+}
+.gv-badges h3 {
+  font-size: 20px;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .gv-split,
+  .gv-split.gv-principles,
+  .gv-recog {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .gv-frame.sq {
+    aspect-ratio: 4 / 3;
+  }
+  .gv-frame.tall,
+  .gv-frame.wide {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+  .gv-steps {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    margin-top: 48px;
+    padding: 0 0 0 44px;
+  }
+  .gv-steps::before {
+    top: 0;
+    bottom: 0;
+    left: 8px;
+    right: auto;
+    width: 2px;
+    height: auto;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  .reveal.in .gv-steps::before {
+    transform: scaleY(1);
+  }
+  .gv-node {
+    top: 28px;
+    left: -44px;
+  }
+}
+@media (max-width: 600px) {
+  .gv-badges {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Reduced motion: final state */
+@media (prefers-reduced-motion: reduce) {
+  .reveal > .gv-frame {
+    clip-path: none !important;
+  }
+  .gv-steps li {
+    opacity: 1 !important;
+  }
+  .gv-steps::before,
+  .gv-node {
+    transform: none !important;
+  }
+  .gv-num {
+    color: rgba(255, 235, 18, 0.3) !important;
+  }
+}
