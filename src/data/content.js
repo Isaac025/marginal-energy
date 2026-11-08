@@ -297,25 +297,110 @@ export const governance = {
 
 /* ---------- Services (all DRAFT) ---------- */
 export const services = {
-  lead: "An integrated approach to developing and operating energy assets in Nigeria and beyond.",
+  lead: "Our operations span the entire oil and gas spectrum.",
+  intro: {
+    heading: "Empowering Progress Through Responsible Energy",
+    body: "Our operations span the entire oil and gas spectrum, encompassing the identification of oil and natural gas deposits, as well as the profitable exploration and drilling of these resources. Additionally, we offer Subsurface Engineering services to other energy companies, employing cutting-edge data collection and appraisal tools.",
+  },
   items: [
     {
-      title: "Exploration and production",
-      text: "Appraising and developing oil and gas assets, from seismic acquisition to drilling and production.",
+      icon: "derrick",
+      title: "Exploration & Production",
+      text: "Our focus on Exploration & Production involves identifying and extracting oil and gas reserves to meet energy demands efficiently. We employ cutting-edge technology and rigorous exploration methods to uncover new reserves while maximizing production from existing fields.",
     },
     {
-      title: "Marginal field development",
-      text: "Bringing discovered but undeveloped fields into production through local capability and technical innovation.",
+      icon: "pump",
+      title: "Retail Marketing & Distribution",
+      text: "Our operations in Retail Marketing & Distribution caters to diverse consumer needs, delivering quality refined petroleum products and services through an extensive network of retail outlets that we partner with.",
     },
     {
-      title: "Field operations",
-      text: "Safe, efficient day-to-day operation and maintenance of production facilities.",
+      icon: "swap",
+      title: "Supply & Trading",
+      text: "Our Supply & Trading operations involves navigating global markets to procure and distribute oil and gas products, ensuring reliable supply chains and optimized trading strategies.",
     },
     {
-      title: "Community partnership",
-      text: "Programmes that create skills, jobs and opportunity in the communities around our operations.",
+      icon: "tank",
+      title: "Terminals & Storage",
+      text: "Our Terminals & Storage facilities play a crucial role in our operations, providing secure storage and efficient distribution hubs for our oil and gas products.",
+    },
+    {
+      icon: "truck",
+      title: "Haulage",
+      text: "Our operations in Haulage services ensure the seamless transportation of oil and gas products, optimizing logistics and maintaining supply chain integrity.",
+    },
+    {
+      icon: "ship",
+      title: "Shipping",
+      text: "Our Shipping operations facilitate the global movement of oil and gas products, leveraging strategic routes and vessel management for safe and efficient delivery worldwide.",
     },
   ],
+  // SOURCE: the intro paragraph on the live page.
+  subsurface: {
+    heading: "Subsurface Engineering",
+    text: "Alongside our own operations, we offer Subsurface Engineering services to other energy companies, employing cutting-edge data collection and appraisal tools.",
+    tags: ["Data collection", "Appraisal tools"],
+  },
+  // CHECK: this block and the "experience" block below read like template text. They mention
+  // renewable investments and combining multiple energy sources, which does not match the
+  // oil and gas services above. Confirm with Marginal Energy before launch.
+  features: {
+    heading: "Innovating Sustainable Energy Solutions for All",
+    lead: "Discover how our commitment to innovation, efficiency, and sustainability drives energy solutions that empower communities and protect the environment.",
+    items: [
+      {
+        icon: "grid",
+        title: "Integrated Energy Management",
+        text: "Offering seamless solutions that optimize energy use while promoting environmental responsibility.",
+      },
+      {
+        icon: "sun",
+        title: "Renewable Energy Investments",
+        text: "Driving growth through strategic investments in clean and sustainable energy technologies.",
+      },
+      {
+        icon: "users",
+        title: "Community-Focused Initiatives",
+        text: "Engaging with local communities to ensure energy development supports social and economic progress.",
+      },
+    ],
+  },
+  commitment: {
+    heading: "Our Commitment",
+    body: "At Marginal Energy, our commitment extends beyond operations, it is reflected in how we care for our people, protect the environment, and support the communities where we operate. We uphold the highest standards of safety, health, and operational excellence while actively contributing to community development. Our goal is to create shared value, ensuring that our presence delivers long-term benefits to all stakeholders, in alignment with our vision and mission.",
+    cta: "Explore More",
+    image:
+      UP +
+      "top-view-diverse-people-putting-their-hands-together-green-grass-background-unity-teamwork-concept_14117-374358.jpg",
+  },
+  experience: {
+    heading: "Experience Sustainable Energy Solutions That Drive Progress",
+    lead: "Discover how Marginal Energy\u2019s innovative and responsible energy services deliver lasting value to communities and businesses alike.",
+    cta: "Learn More",
+    // Stock photos. Confirm licences, then download into src/assets/.
+    items: [
+      {
+        title: "Innovative Energy Integration",
+        text: "Seamlessly combining multiple energy sources for optimized efficiency and sustainability, supporting reliable and adaptive power delivery.",
+        alt: "Engineers discussing work at an oil and gas facility",
+        image:
+          UP +
+          "team-industry-engineer-are-working-and-discussing-at-front-oil-and-gas-industrial-factory-oil-refinery-plant-for-industry-drone-view-generative-ai-free-photo-1024x683.jpeg",
+      },
+      {
+        title: "Commitment to Environmental Stewardship",
+        text: "Prioritizing eco-friendly practices to minimize impact while promoting renewable energy adoption and long-term ecological balance.",
+        alt: "",
+        image: UP + "360_F_432359625_N0VEVQ2DLLthQAkAokmREtdfa3vvoe31.jpg",
+      },
+      {
+        title: "Community-Centered Development",
+        text: "Engaging with local stakeholders to ensure energy projects benefit social growth and foster transparent, responsible partnerships.",
+        alt: "",
+        image:
+          "https://images.unsplash.com/photo-1760270129343-6190b2f340e9?auto=format&fit=crop&w=1280&q=80",
+      },
+    ],
+  },
 };
 
 /* ---------- Our Commitment (VERIFIED) ---------- */
