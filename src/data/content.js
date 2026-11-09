@@ -23,6 +23,14 @@ export const company = {
   ],
 };
 
+export const contactPage = {
+  banner:
+    "https://marginal-energy.com/wp-content/uploads/2026/02/Powering-more-responsibly-1024x256.png",
+  intro:
+    "Reach out to Marginal Energy through our contact details below for prompt and reliable support.",
+  map: "https://maps.google.com/maps?q=Ivie%20House%2C%204%20Ajose%20Adeogun%20Street%2C%20Victoria%20Island%2C%20Lagos&output=embed",
+};
+
 export const nav = [
   {
     label: "About",
@@ -470,80 +478,126 @@ export const csr = {
   imageAlt: "People joining hands over green grass",
 };
 
-/* ---------- Health & Environment (all DRAFT) ---------- */
-/*
-  Optional expansion for src/data/content.js. Keep the export named `hse`.
-  HealthEnvironment.jsx remains compatible with the current hse.lead + hse.items
-  shape, and uses these extra fields when present.
-*/
+/* ---------- Health & Environment (text from marginal-energy.com/health-environment) ---------- */
 export const hse = {
-  lead: "Health, Safety, and Environmental stewardship are fundamental to Marginal Energy’s operations. We are committed to protecting our employees, host communities, and the ecosystems in which we operate.",
-  heading: "Explore our commitment to health and environmental excellence",
-  body: "Our HSE framework is guided by strict standards, proactive risk management, and continuous improvement. We integrate sustainable practices and innovative technologies to minimize environmental impact while maintaining safe and efficient operations.",
+  heading:
+    "Explore Marginal Energy’s Commitment to Health and Environmental Excellence",
+  body: "Health, Safety, and Environmental stewardship are fundamental to Marginal Energy’s operations. We are committed to protecting our employees, host communities, and the ecosystems in which we operate. Our HSE framework is guided by strict standards, proactive risk management, and continuous improvement. We integrate sustainable practices and innovative technologies to minimize environmental impact while maintaining safe and efficient operations.",
   image:
     "https://marginal-energy.com/wp-content/uploads/2026/02/750pxx370px_Dec5.jpg",
   imageAlt: "Industrial site representing health and environmental stewardship",
-  practicesHeading: "Key HSE practices include",
+  practicesHeading: "Key HSE Practices Include",
   practicesLead:
     "Through these measures, we foster a culture of safety excellence and environmental responsibility.",
   items: [
     {
+      icon: "book",
       title: "Comprehensive Safety Training",
       text: "Equipping employees with the skills and knowledge to identify and manage workplace risks.",
-      icon: "01",
     },
     {
+      icon: "siren",
       title: "Emergency Preparedness",
       text: "Implementing robust response plans and conducting regular drills.",
-      icon: "02",
     },
     {
+      icon: "search",
       title: "Environmental Impact Assessments",
       text: "Evaluating and mitigating environmental risks across our operations.",
-      icon: "03",
     },
     {
+      icon: "chip",
       title: "Technology Integration",
-      text: "Using advanced tools to improve monitoring and control systems.",
-      icon: "04",
+      text: "Leveraging advanced tools to improve monitoring and control systems.",
     },
     {
+      icon: "cycle",
       title: "Continuous Improvement",
       text: "Regular reviews to enhance HSE performance and operational standards.",
-      icon: "05",
     },
     {
+      icon: "link",
       title: "Stakeholder Engagement",
-      text: "Working with employees, regulators, communities, and partners to support transparency and collaboration.",
-      icon: "06",
+      text: "Working closely with employees, regulators, communities, and partners to ensure transparency and collaboration.",
     },
   ],
-  closingHeading: "Committed to safety. Dedicated to the planet.",
-  closing:
-    "We keep strengthening our practices to protect people, reduce environmental impacts, and support responsible operations.",
+  certsHeading: "Committed to Safety, Dedicated to the Planet",
+  certsLead:
+    "Explore Marginal Energy’s certifications and environmental commitments that guarantee operational safety and sustainable energy solutions.",
+  certsImage:
+    "https://marginal-energy.com/wp-content/uploads/2026/02/Designer-3-1024x683.png",
+  certsImageAlt: "Marginal Energy health, safety and environment",
+  certs: [
+    {
+      icon: "leaf",
+      title: "ISO 14001 Environmental Management",
+      text: "Certified to ISO 14001, we systematically minimize environmental impacts while promoting sustainable business practices.",
+    },
+    {
+      icon: "shield",
+      title: "OHSAS 18001 Occupational Health & Safety",
+      text: "Our OHSAS 18001 certification highlights rigorous health and safety protocols protecting employees and communities.",
+    },
+    {
+      icon: "sun",
+      title: "EPA Green Power Partnership",
+      text: "Recognized by the EPA for utilizing renewable energy sources, reducing carbon footprint significantly.",
+    },
+    {
+      icon: "award",
+      title: "Community Safety Excellence Award",
+      text: "Awarded for outstanding safety performance and proactive risk management within our operations.",
+    },
+  ],
 };
 
-/* ---------- Our Employees ---------- */
-export const people = {
-  lead: "Our people are the driving force behind Marginal Energy’s success. We believe that empowering our workforce is essential to achieving safe, innovative, and sustainable operations.",
-  heading: "Meet the experts powering Marginal Energy’s success",
-  body: "We are committed to providing a supportive and inclusive work environment that promotes professional growth, fairness, and long-term well-being.",
-  image: "/images/our-employees.jpg",
+/* ---------- Our Employees (text from marginal-energy.com/our-team) ---------- */
+export const employees = {
+  image:
+    "https://marginal-energy.com/wp-content/uploads/2026/02/Designer-4-1024x683.png",
   imageAlt: "Marginal Energy employees working together",
-  items: [
+  heading: "Meet the Experts Powering Marginal Energy’s Success",
+  paragraphs: [
+    "Our people are the driving force behind Marginal Energy’s success. We believe that empowering our workforce is essential to achieving safe, innovative, and sustainable operations.",
+    "We are committed to providing a supportive and inclusive work environment that promotes professional growth, fairness, and long-term well-being. Our people-focused approach includes:",
+  ],
+  // The live page lists "Competitive compensation, benefits, and savings plans" twice; shown once here.
+  points: [
+    { icon: "book", text: "Continuous learning and career development" },
     {
-      title: "Continuous learning and career development",
-      text: "We support professional growth and help our people build the skills they need to contribute and progress.",
+      icon: "coins",
+      text: "Competitive compensation, benefits, and savings plans",
     },
+    { icon: "shield", text: "Safe and reliable working conditions" },
+    { icon: "scale", text: "Equal opportunity and non-discrimination" },
     {
-      title: "Safe and reliable working conditions",
-      text: "We work to provide a safe, supportive environment where employees can do their best work.",
-    },
-    {
-      title: "Equal opportunity and inclusion",
-      text: "We value respect, diversity, and collaboration, including gender equality and inclusion of persons with disabilities.",
+      icon: "users",
+      text: "Gender equality and inclusion of persons with disabilities",
     },
   ],
+  closing:
+    "At Marginal Energy, we value respect, diversity, and collaboration. Together, we build a workplace where everyone can thrive and contribute meaningfully.",
+  values: ["Respect", "Diversity", "Collaboration"],
+  photo:
+    "https://marginal-energy.com/wp-content/uploads/2026/02/black-people-team_1267131-3870.avif",
+};
+
+/* ---------- Careers (text from marginal-energy.com/careers) ---------- */
+export const culture = {
+  coverImage:
+    "https://images.unsplash.com/photo-1734779205618-30ee0220f56f?fit=crop&crop=entropy%2Cfaces&auto=format%2Ccompress&w=1280",
+  heading: "Our People & Culture",
+  text: "Marginal Energy fosters a culture of integrity, innovation, and responsibility. We encourage teamwork, accountability, and continuous improvement, creating an environment where ideas are valued and excellence is recognized.",
+  recruitHeading: "How we recruit",
+  recruitText:
+    "Our recruitment process is transparent, fair, and merit-based. We seek individuals who share our values, demonstrate professionalism, and are committed to responsible energy development.",
+  recruitImage:
+    "https://marginal-energy.com/wp-content/uploads/2026/02/0x0-1024x684.webp",
+  pillars: ["Transparent", "Fair", "Merit-based"],
+  launchHeading: "Launch Your Career with Marginal Energy Today",
+  launchText:
+    "We offer opportunities across technical, operational, and corporate functions. Join us and be part of a team that is Powering More, Responsibly",
+  button: "Discover Opportunities",
 };
 
 /* ---------- Media & Blog ---------- */
@@ -578,16 +632,50 @@ export const publications = {
 };
 
 /* ---------- Gallery ---------- */
-// Add real photos: put files in src/assets/gallery/, import them and set `src`.
+export const galleryPage = {
+  banner:
+    "https://marginal-energy.com/wp-content/uploads/2026/02/Powering-more-responsibly-1024x256.png",
+  heading: "Showcasing Innovation in Sustainable Energy",
+  lead: "Explore a vibrant gallery capturing our commitment to efficient and eco-friendly energy solutions.",
+};
+
 export const gallery = [
-  { title: "Community programmes", src: csr.image, tone: "a" },
-  { title: "Field operations", tone: "b" },
-  { title: "Skills training", tone: "c" },
-  { title: "Scholarship awards", tone: "d" },
-  { title: "Offshore exploration", tone: "b" },
-  { title: "Our team", tone: "a" },
-  { title: "Host community visits", tone: "d" },
-  { title: "Head office, Victoria Island", tone: "c" },
+  {
+    title: "Energy innovation",
+    alt: "Energy infrastructure representing innovation in sustainable energy",
+    src: "https://marginal-energy.com/wp-content/uploads/2026/02/Designer-1-1024x683.png",
+    tone: "a",
+  },
+  {
+    title: "Offshore operations",
+    alt: "Offshore oil and gas platform at sea",
+    src: "https://marginal-energy.com/wp-content/uploads/2026/02/offshore-oil-gas-platform-industrial-rig-energy-extraction-sea-blue-sky_174533-91235.avif",
+    tone: "b",
+  },
+  {
+    title: "Energy in action",
+    alt: "Energy production and industrial operations",
+    src: "https://marginal-energy.com/wp-content/uploads/2026/02/R-1024x448.jpg",
+    tone: "c",
+  },
+  {
+    title: "Efficient infrastructure",
+    alt: "Oil and gas pipeline infrastructure",
+    src: "https://marginal-energy.com/wp-content/uploads/2026/02/optimizing-efficiency-aligned-oil-gas-pipeline-production-slots-offshore-wellhead-remote_983420-333488.jpg",
+    tone: "d",
+  },
+  {
+    title: "People and progress",
+    alt: "People working together to support energy development",
+    src: "https://marginal-energy.com/wp-content/uploads/2026/02/istockphoto-624185954-612x612-1.jpg",
+    tone: "b",
+  },
+  {
+    title: "Powering more, responsibly",
+    alt: "Marginal Energy powering more responsibly",
+    src: "https://marginal-energy.com/wp-content/uploads/2026/02/Untitled-design-1-1024x576.png",
+    tone: "a",
+  },
 ];
 
 /* ---------- Careers ---------- */

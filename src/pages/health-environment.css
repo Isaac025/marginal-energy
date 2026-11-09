@@ -1,312 +1,237 @@
-/* Health & Environment page styles. Load alongside the shared me-band styles. */
-.he-page {
-  overflow: hidden;
+/* Health & Environment page. Builds on about.css (marquee, scroll text, icons, keyframes). */
+
+/* Intro */
+.he-intro .ab-center h2 {
+  max-width: 880px;
 }
-.he-intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: clamp(36px, 7vw, 88px);
+.he-photo {
+  max-width: 940px;
+  margin-top: 64px;
 }
-.he-eyebrow {
-  margin: 0 0 14px;
-  color: var(--green);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-.he-intro-copy h2,
-.he-heading h2 {
-  margin: 0 0 18px;
-  max-width: 700px;
-  font-size: clamp(30px, 4vw, 52px);
-  line-height: 1.08;
-}
-.he-intro-copy > p:last-child,
-.he-heading > p:last-child {
-  max-width: 650px;
-  color: var(--ink);
-  font-size: clamp(16px, 1.3vw, 19px);
-  line-height: 1.75;
-}
-.he-image {
+.reveal > .he-frame {
   position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  min-height: 360px;
   margin: 0;
+  overflow: hidden;
   background: var(--green);
-  clip-path: inset(0 0 100% 0);
-  transition: clip-path 1s cubic-bezier(0.7, 0, 0.2, 1);
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.4s cubic-bezier(0.7, 0, 0.2, 1);
 }
-.reveal.in .he-image {
+.reveal.in > .he-frame {
   clip-path: inset(0);
 }
-.he-image::after {
+.he-photo .he-frame {
+  aspect-ratio: 2 / 1;
+}
+.he-photo .he-frame::after {
   content: "";
   position: absolute;
-  inset: 35% 0 0;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.62));
-}
-.he-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 360px;
-  object-fit: cover;
-  transform: scale(1.07);
-  transition: transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.reveal.in .he-image img {
-  transform: scale(1);
-}
-.he-image figcaption {
-  position: absolute;
-  z-index: 1;
-  right: 22px;
-  bottom: 20px;
-  left: 22px;
-  color: #fff;
-  font-size: 0.9rem;
-}
-.he-practices {
-  background: var(--paper, #f5f6f2);
-}
-.he-heading {
-  max-width: 760px;
-  margin: 0 auto 46px;
-  text-align: center;
-}
-.he-heading .he-eyebrow {
-  color: var(--green);
-}
-.he-heading h2 {
-  margin-right: auto;
-  margin-left: auto;
-}
-.he-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-.he-reveal-card {
-  opacity: 0;
-  transform: translateY(24px);
-}
-.he-reveal-card.in {
-  opacity: 1;
-  transform: translateY(0);
-  transition:
-    opacity 0.65s ease,
-    transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
-  transition-delay: calc(var(--he-index) * 0.1s);
-}
-.he-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 285px;
-  height: 100%;
-  padding: 30px;
-  overflow: hidden;
-  border: 1px solid rgba(1, 73, 50, 0.12);
-  background: #fff;
-  transition:
-    transform 0.35s,
-    box-shadow 0.35s,
-    border-color 0.35s;
-}
-.he-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--green);
-  box-shadow: 0 22px 48px -30px rgba(1, 73, 50, 0.65);
-}
-.he-number {
-  position: absolute;
-  top: 22px;
-  right: 24px;
-  color: rgba(1, 73, 50, 0.22);
-  font-size: 2.2rem;
-  font-weight: 700;
-}
-.he-card-mark {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  margin-bottom: 30px;
-  border-radius: 50%;
-  background: var(--green);
-  color: var(--sun);
-  font-size: 22px;
-  font-weight: 700;
-  transition:
-    transform 0.45s,
-    background 0.35s,
-    color 0.35s;
-}
-.he-card:hover .he-card-mark {
-  transform: rotate(12deg) scale(1.08);
-  background: var(--sun);
-  color: var(--ink);
-}
-.he-card h3 {
-  margin: 0 0 12px;
-  color: var(--ink);
-  font-size: clamp(19px, 1.7vw, 23px);
-  line-height: 1.2;
-}
-.he-card p {
-  margin: 0;
-  color: color-mix(in srgb, var(--ink) 78%, transparent);
-  line-height: 1.65;
-}
-.he-card-line {
-  position: absolute;
-  right: 30px;
-  bottom: 0;
-  left: 30px;
-  height: 3px;
+  inset: auto 0 0 0;
+  height: 6px;
   background: var(--sun);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.45s;
+  transition: transform 1.2s cubic-bezier(0.5, 0, 0.2, 1) 1.1s;
 }
-.he-card:hover .he-card-line {
+.reveal.in .he-photo .he-frame::after,
+.he-photo.in .he-frame::after {
   transform: scaleX(1);
 }
-.he-promise {
+
+/* Practices */
+.he-split {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 64px;
+  align-items: start;
+}
+.he-sticky {
+  position: sticky;
+  top: 110px;
+}
+.he-sticky h2 {
+  margin-bottom: 18px;
+}
+.he-rule {
+  display: block;
+  width: 84px;
+  height: 4px;
+  margin-top: 34px;
+  background: var(--sun);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s cubic-bezier(0.5, 0, 0.2, 1) 0.6s;
+}
+.reveal.in .he-rule {
+  transform: scaleX(1);
+}
+.he-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.he-card,
+.he-cert {
   position: relative;
   overflow: hidden;
+  padding: 30px 26px 32px;
+  background: #fff;
+  border-left: 4px solid var(--green);
+  opacity: 0;
+  transition:
+    transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background 0.45s,
+    color 0.45s,
+    box-shadow 0.45s;
 }
-.he-promise-inner {
-  position: relative;
-  min-height: 300px;
+.he-split.in .he-card,
+.he-certs-grid.in .he-cert {
+  opacity: 1;
+  animation: slidein 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  animation-delay: calc(0.3s + var(--i) * 0.12s);
 }
-.he-promise .he-eyebrow {
-  color: var(--sun);
+.he-card .ab-ico,
+.he-cert .ab-ico {
+  margin-bottom: 20px;
+  transition:
+    transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background 0.4s;
 }
-.he-promise h2 {
-  position: relative;
-  z-index: 1;
-  max-width: 760px;
-  margin: 0 0 18px;
-  color: #fff;
-  font-size: clamp(32px, 5vw, 62px);
-  line-height: 1.05;
+.he-card .ab-ico svg,
+.he-cert .ab-ico svg {
+  transition: stroke 0.4s;
 }
-.he-promise-inner > p:not(.he-eyebrow) {
-  position: relative;
-  z-index: 1;
-  max-width: 620px;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 18px;
-  line-height: 1.7;
+.he-card h3,
+.he-cert h3 {
+  margin: 0 0 10px;
+  font-size: 21px;
+  line-height: 1.25;
+  transition: color 0.4s;
 }
-.he-orbit {
-  position: absolute;
-  top: 50%;
-  right: 4%;
-  width: 220px;
-  height: 220px;
-  border: 1px solid rgba(255, 235, 18, 0.28);
-  border-radius: 50%;
-  transform: translateY(-50%);
-  animation: he-spin 22s linear infinite;
+.he-card p,
+.he-cert p {
+  margin: 0;
+  line-height: 1.65;
 }
-.he-orbit::before,
-.he-orbit::after {
+.he-card::after,
+.he-cert::after {
   content: "";
   position: absolute;
-  inset: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 50%;
-}
-.he-orbit::after {
-  inset: 48px;
-  border-color: rgba(255, 235, 18, 0.24);
-}
-.he-orbit span {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
   background: var(--sun);
-  box-shadow: 0 0 20px rgba(255, 235, 18, 0.6);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.he-orbit span:nth-child(2) {
-  top: auto;
-  right: 16px;
-  bottom: 44px;
-  left: auto;
-  width: 8px;
-  height: 8px;
-  background: #fff;
+.he-card:hover,
+.he-cert:hover {
+  transform: translateY(-6px);
+  background: var(--green);
+  color: #e3f0e8;
+  box-shadow: 0 22px 40px -24px rgba(1, 73, 50, 0.75);
 }
-.he-orbit span:nth-child(3) {
-  top: 48%;
-  left: 16px;
-  width: 9px;
-  height: 9px;
-  background: #6dbc8b;
+.he-card:hover h3,
+.he-cert:hover h3 {
+  color: #fff;
 }
-@keyframes he-spin {
-  to {
-    rotate: 360deg;
+.he-card:hover .ab-ico,
+.he-cert:hover .ab-ico {
+  background: var(--sun);
+  transform: rotate(-10deg) scale(1.08);
+}
+.he-card:hover .ab-ico svg,
+.he-cert:hover .ab-ico svg {
+  stroke: var(--ink);
+}
+.he-card:hover::after,
+.he-cert:hover::after {
+  transform: scaleX(1);
+}
+
+/* Certifications */
+.he-certs-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 64px;
+  align-items: stretch;
+}
+.he-certs h2 {
+  max-width: 640px;
+  margin-bottom: 16px;
+}
+.he-certs .me-lead {
+  max-width: 640px;
+}
+.he-cert-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+}
+.he-cert {
+  background: var(--mist);
+}
+.he-cert h3 {
+  font-size: 19px;
+}
+.he-cert .ab-ico {
+  position: relative;
+}
+.he-certs-grid.in .he-cert .ab-ico::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: pulse 2.8s ease-out infinite;
+  animation-delay: calc(1.2s + var(--i) * 0.5s);
+}
+.he-tall {
+  min-height: 560px;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .he-split,
+  .he-certs-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .he-sticky {
+    position: static;
+  }
+  .he-photo {
+    margin-top: 40px;
+  }
+  .he-tall {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
 }
-@media (max-width: 900px) {
-  .he-intro-grid {
+@media (max-width: 640px) {
+  .he-grid,
+  .he-cert-list {
     grid-template-columns: 1fr;
   }
-  .he-image {
-    min-height: 300px;
-  }
-  .he-image img {
-    min-height: 300px;
-  }
-  .he-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .he-orbit {
-    right: -50px;
-    opacity: 0.55;
+  .he-photo .he-frame {
+    aspect-ratio: 4 / 3;
   }
 }
-@media (max-width: 600px) {
-  .he-grid {
-    grid-template-columns: 1fr;
-  }
-  .he-card {
-    min-height: 240px;
-  }
-  .he-orbit {
-    top: auto;
-    right: -90px;
-    bottom: -70px;
-    transform: none;
-  }
-  .he-promise-inner {
-    padding-bottom: 100px;
-  }
-}
+
+/* Reduced motion: final state */
 @media (prefers-reduced-motion: reduce) {
-  .he-page *,
-  .he-page *::before,
-  .he-page *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
-  .he-image {
+  .reveal > .he-frame {
     clip-path: none !important;
   }
-  .he-reveal-card {
-    opacity: 1;
-    transform: none;
+  .he-card,
+  .he-cert {
+    opacity: 1 !important;
+  }
+  .he-rule,
+  .he-photo .he-frame::after {
+    transform: none !important;
   }
 }

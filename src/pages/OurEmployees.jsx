@@ -1,96 +1,87 @@
+import "./about.css";
 import "./our-employees.css";
 import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
 import CtaBand from "../components/CtaBand";
-import { people } from "../data/content";
-
-const workplaceCommitments = [
-  "Continuous learning and career development",
-  "Competitive compensation, benefits, and savings plans",
-  "Safe and reliable working conditions",
-  "Equal opportunity and non-discrimination",
-  "Gender equality and inclusion of persons with disabilities",
-];
+import Icon from "../components/Icon";
+import { employees } from "../data/content";
 
 export default function OurEmployees() {
-  return (
-    <main className="oe-page">
-      <PageHero kicker="Commitment" title="Our Employees" lead={people.lead} />
+  const words = Array.from({ length: 3 }).flatMap(() =>
+    employees.points.map((p) => p.text),
+  );
 
-      <section className="me-band oe-intro">
-        <Reveal className="me-wrap oe-intro-inner">
-          <p className="oe-eyebrow">People power progress</p>
-          <h2>Meet the people powering Marginal Energy’s success</h2>
-          <p className="oe-intro-copy">
-            Our people are the driving force behind our success. We believe that
-            empowering our workforce is essential to achieving safe, innovative,
-            and sustainable operations.
-          </p>
-          <p className="oe-intro-copy">
-            We are committed to providing a supportive and inclusive work
-            environment that promotes professional growth, fairness, and
-            long-term well-being.
-          </p>
+  return (
+    <div className="about oe">
+      <PageHero kicker="Commitment" title="Our Employees" />
+
+      {/* Commitments marquee */}
+      <div className="ab-marquee" aria-hidden="true">
+        <div className="track">
+          {[0, 1].map((g) => (
+            <div key={g} className="group">
+              {words.map((w, i) => (
+                <span key={i}>{w}</span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Photo + people-focused approach */}
+      <section className="me-band me-tint">
+        <Reveal progress className="me-wrap oe-split">
+          <figure className="oe-frame ab-ph" style={{ "--k": 70 }}>
+            <img
+              src={employees.image}
+              alt={employees.imageAlt}
+              loading="lazy"
+            />
+          </figure>
+          <div>
+            <h2>{employees.heading}</h2>
+            {employees.paragraphs.map((p) => (
+              <p key={p} className="me-lead spaced">
+                {p}
+              </p>
+            ))}
+            <ul className="oe-list">
+              {employees.points.map((pt, i) => (
+                <li key={pt.text} style={{ "--i": i }}>
+                  <span className="ab-ico">
+                    <Icon name={pt.icon} />
+                  </span>
+                  {pt.text}
+                </li>
+              ))}
+            </ul>
+            <p className="oe-closing">{employees.closing}</p>
+          </div>
         </Reveal>
       </section>
 
-      <section className="me-band oe-opportunities">
+      {/* Team photo with the three values */}
+      <Reveal as="section" progress className="oe-band">
+        <figure className="oe-bg ab-ph" style={{ "--k": 90 }}>
+          <img src={employees.photo} alt="" loading="lazy" />
+        </figure>
         <div className="me-wrap">
-          <Reveal className="oe-section-heading">
-            <p className="oe-eyebrow">How we support our team</p>
-            <h2>Room to learn, contribute, and thrive</h2>
-          </Reveal>
-          <div className="oe-cards">
-            {people.items.map((item, index) => (
-              <Reveal
-                key={item.title}
-                className="oe-reveal-card"
-                style={{ "--oe-index": index }}
-              >
-                <article className="oe-card">
-                  <span className="oe-index" aria-hidden="true">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="oe-symbol" aria-hidden="true">
-                    ✳
-                  </span>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                  <span className="oe-card-accent" aria-hidden="true" />
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="me-band me-dark oe-workplace">
-        <Reveal className="me-wrap oe-workplace-grid">
-          <div>
-            <p className="oe-eyebrow">A workplace for everyone</p>
-            <h2>Respect, diversity, and collaboration</h2>
-            <p className="oe-workplace-lead">
-              Together, we build a workplace where everyone can thrive and
-              contribute meaningfully.
-            </p>
-          </div>
-          <ul className="oe-points">
-            {workplaceCommitments.map((commitment, index) => (
-              <li key={commitment} style={{ "--oe-index": index }}>
-                <span aria-hidden="true">✓</span>
-                {commitment}
+          <ul className="oe-values">
+            {employees.values.map((v, i) => (
+              <li key={v} style={{ "--i": i }}>
+                <span>{v}</span>
               </li>
             ))}
           </ul>
-        </Reveal>
-      </section>
+        </div>
+      </Reveal>
 
       <CtaBand
         title="Build your career with us"
-        text="See current openings or send us your CV."
+        text="Find out how we recruit and how to apply."
         to="/careers"
         label="Careers"
       />
-    </main>
+    </div>
   );
 }
