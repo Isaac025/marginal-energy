@@ -51,10 +51,13 @@ function useCardCarousel(itemCount) {
       const first = viewport.children[0];
       const second = viewport.children[1];
       if (!first) return;
-      const step = second ? second.offsetLeft - first.offsetLeft : first.offsetWidth;
-      const reachable = step > 0
-        ? Math.ceil((viewport.scrollWidth - viewport.clientWidth) / step)
-        : 0;
+      const step = second
+        ? second.offsetLeft - first.offsetLeft
+        : first.offsetWidth;
+      const reachable =
+        step > 0
+          ? Math.ceil((viewport.scrollWidth - viewport.clientWidth) / step)
+          : 0;
       setMaxIndex(Math.max(0, reachable));
       setIndex((current) => Math.min(current, Math.max(0, reachable)));
     };
@@ -65,33 +68,44 @@ function useCardCarousel(itemCount) {
     return () => observer.disconnect();
   }, [itemCount]);
 
-  const move = useCallback((direction) => {
-    const viewport = viewportRef.current;
-    if (!viewport) return;
-    const nextIndex = Math.max(0, Math.min(maxIndex, index + direction));
-    const card = viewport.children[nextIndex];
-    if (!card) return;
-    viewport.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
-    setIndex(nextIndex);
-  }, [index, maxIndex]);
+  const move = useCallback(
+    (direction) => {
+      const viewport = viewportRef.current;
+      if (!viewport) return;
+      const nextIndex = Math.max(0, Math.min(maxIndex, index + direction));
+      const card = viewport.children[nextIndex];
+      if (!card) return;
+      viewport.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+      setIndex(nextIndex);
+    },
+    [index, maxIndex],
+  );
 
   const updateIndex = () => {
     const viewport = viewportRef.current;
     if (!viewport?.children.length) return;
     const first = viewport.children[0];
     const second = viewport.children[1];
-    const step = second ? second.offsetLeft - first.offsetLeft : first.offsetWidth;
-    if (step > 0) setIndex(Math.min(maxIndex, Math.round(viewport.scrollLeft / step)));
+    const step = second
+      ? second.offsetLeft - first.offsetLeft
+      : first.offsetWidth;
+    if (step > 0)
+      setIndex(Math.min(maxIndex, Math.round(viewport.scrollLeft / step)));
   };
 
   return { viewportRef, index, maxIndex, move, updateIndex };
 }
 
 export function NewsInsightsCarousel({ items }) {
-  const { viewportRef, index, maxIndex, move, updateIndex } = useCardCarousel(items.length);
+  const { viewportRef, index, maxIndex, move, updateIndex } = useCardCarousel(
+    items.length,
+  );
 
   return (
-    <section className="home-carousel-section home-latest-section" aria-labelledby="latest-news-heading">
+    <section
+      className="home-carousel-section home-latest-section"
+      aria-labelledby="latest-news-heading"
+    >
       <div className="home-container">
         <div className="home-carousel-heading">
           <div>
@@ -111,12 +125,19 @@ export function NewsInsightsCarousel({ items }) {
         >
           {items.map((item) => (
             <article className="home-news-card" key={item.title}>
-              <Link className="home-news-card-image" to={item.to} tabIndex={-1} aria-hidden="true">
+              <Link
+                className="home-news-card-image"
+                to={item.to}
+                tabIndex={-1}
+                aria-hidden="true"
+              >
                 <img src={item.image} alt="" loading="lazy" />
               </Link>
               <div className="home-news-card-copy">
                 <span className="home-news-card-category">{item.category}</span>
-                <h3><Link to={item.to}>{item.title}</Link></h3>
+                <h3>
+                  <Link to={item.to}>{item.title}</Link>
+                </h3>
                 <p>{item.summary}</p>
                 <Link className="home-news-card-link" to={item.to}>
                   Explore story <span aria-hidden="true">↗</span>
@@ -127,8 +148,15 @@ export function NewsInsightsCarousel({ items }) {
         </div>
 
         <div className="home-carousel-footer">
-          <Link className="home-carousel-view-all" to="/media-blog">View all news &amp; insights <span aria-hidden="true">↗</span></Link>
-          <CarouselControls label="News" index={index} maxIndex={maxIndex} onMove={move} />
+          <Link className="home-carousel-view-all" to="/media-blog">
+            View all news &amp; insights <span aria-hidden="true">↗</span>
+          </Link>
+          <CarouselControls
+            label="News"
+            index={index}
+            maxIndex={maxIndex}
+            onMove={move}
+          />
         </div>
       </div>
     </section>
@@ -136,10 +164,15 @@ export function NewsInsightsCarousel({ items }) {
 }
 
 export function RegulatoryNewsCarousel({ items }) {
-  const { viewportRef, index, maxIndex, move, updateIndex } = useCardCarousel(items.length);
+  const { viewportRef, index, maxIndex, move, updateIndex } = useCardCarousel(
+    items.length,
+  );
 
   return (
-    <section className="home-carousel-section home-regulatory-section" aria-labelledby="regulatory-news-heading">
+    <section
+      className="home-carousel-section home-regulatory-section"
+      aria-labelledby="regulatory-news-heading"
+    >
       <div className="home-container">
         <div className="home-carousel-heading">
           <div>
@@ -159,21 +192,32 @@ export function RegulatoryNewsCarousel({ items }) {
         >
           {items.map((item) => (
             <article className="home-regulatory-card" key={item.title}>
-              <span className="home-regulatory-mark" aria-hidden="true">ME.</span>
+              <span className="home-regulatory-mark" aria-hidden="true">
+                ME.
+              </span>
               <div className="home-regulatory-card-copy">
-                <span className="home-regulatory-demo">Demo notice</span>
+                <span className="home-regulatory-demo">**** notice</span>
                 <h3>{item.title}</h3>
                 <p>{item.summary}</p>
                 <span>{item.date}</span>
               </div>
-              <span className="home-regulatory-arrow" aria-hidden="true">↗</span>
+              <span className="home-regulatory-arrow" aria-hidden="true">
+                ↗
+              </span>
             </article>
           ))}
         </div>
 
         <div className="home-carousel-footer">
-          <Link className="home-carousel-view-all" to="/media-blog">View all regulatory news <span aria-hidden="true">↗</span></Link>
-          <CarouselControls label="Regulatory news" index={index} maxIndex={maxIndex} onMove={move} />
+          <Link className="home-carousel-view-all" to="/media-blog">
+            View all regulatory news <span aria-hidden="true">↗</span>
+          </Link>
+          <CarouselControls
+            label="Regulatory news"
+            index={index}
+            maxIndex={maxIndex}
+            onMove={move}
+          />
         </div>
       </div>
     </section>

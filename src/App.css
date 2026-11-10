@@ -426,6 +426,20 @@
   transition-delay: 0.48s;
 }
 
+/* Buttons directly inside a .reveal wrapper (e.g. the CTA band before the
+   footer) must always be visible. They never start hidden or wait for the
+   scroll observer; only the headings and text fade up. */
+.reveal > .me-btn {
+  opacity: 1;
+  transform: none;
+}
+.reveal > .me-btn:hover {
+  transform: translateY(-2px);
+}
+.reveal.in > .me-btn {
+  transition-delay: 0s;
+}
+
 /* Buttons */
 .me-btn {
   display: inline-block;

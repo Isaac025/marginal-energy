@@ -1,16 +1,23 @@
 /* Global tokens, reset and base typography */
 :root {
-  --ink: #06291f;     /* deep green-black: hero, footer, headings */
-  --green: #0b6b45;   /* primary brand green: logo, buttons, h3 */
-  --leaf: #7dc242;    /* bright accent: hovers, markers, light sweep */
-  --mist: #eef3ee;    /* pale tint for alternate bands */
+  --ink: #06291f; /* deep green-black: hero, footer, headings */
+  --green: #0b6b45; /* primary brand green: logo, buttons, h3 */
+  --leaf: #7dc242; /* bright accent: hovers, markers, light sweep */
+  --sun: #ffeb12; /* brand yellow: accent inside .about pages (--leaf maps to it) */
+  --mist: #eef3ee; /* pale tint for alternate bands */
   --text: #24362f;
   --font: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-*, *::before, *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -21,9 +28,18 @@ body {
   overflow-x: hidden;
 }
 
-a { color: inherit; text-decoration: none; }
-ul { list-style: none; margin: 0; padding: 0; }
-img { max-width: 100%; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
 
 h2 {
   margin: 0 0 20px;
@@ -40,8 +56,13 @@ h3 {
   color: var(--green);
 }
 
-:focus-visible { outline: 3px solid var(--leaf); outline-offset: 3px; }
+:focus-visible {
+  outline: 3px solid var(--leaf);
+  outline-offset: 3px;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
 }
