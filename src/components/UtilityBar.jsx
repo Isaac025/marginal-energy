@@ -1,24 +1,24 @@
-import { company } from "../data/content";
+// import { company } from "../data/content";
 
-export default function UtilityBar() {
-  const fullAddress = company.address.join(" ");
+// export default function UtilityBar() {
+//   const fullAddress = company.address.join(" ");
 
-  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
+//   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
 
-  return (
-    <div className="me-util">
-      <a
-        href={googleMapsUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Locate ${fullAddress} on Google Maps`}
-      >
-        {fullAddress}
-      </a>
+//   return (
+//     <div className="me-util">
+//       <a
+//         href={googleMapsUrl}
+//         target="_blank"
+//         rel="noopener noreferrer"
+//         aria-label={`Locate ${fullAddress} on Google Maps`}
+//       >
+//         {fullAddress}
+//       </a>
 
-      <a href={`mailto:${company.email}`}>{company.email}</a>
+//       <a href={`mailto:${company.email}`}>{company.email}</a>
 
-      <a href={`tel:${company.phoneHref}`}>{company.phone}</a>
-    </div>
-  );
-}
+//       <a href={`tel:${company.phoneHref}`}>{company.phone}</a>
+//     </div>
+//   );
+// }

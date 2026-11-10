@@ -2,6 +2,11 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { hero, home } from "../data/content";
 import Reveal from "../components/Reveal";
+import {
+  NewsInsightsCarousel,
+  RegulatoryNewsCarousel,
+} from "../components/HomeCardCarousel";
+import { latestNewsCards, regulatoryNewsCards } from "../data/homeCarousels";
 import "./Home.css";
 
 const slides = [
@@ -85,7 +90,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="home-hero-footer">
+        {/* <div className="home-hero-footer">
           <div className="hero-pagination">
             {slides.map((slide, index) => (
               <button
@@ -119,7 +124,7 @@ export default function Home() {
               →
             </button>
           </div>
-        </div>
+        </div> */}
 
         <div className="hero-side-label">MARGINAL ENERGY LIMITED</div>
       </section>
@@ -335,21 +340,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LATEST NEWS */}
-      <section className="home-news section-padding">
-        <div className="home-container news-content">
-          <Reveal>
-            <span className="section-label">LATEST DEVELOPMENTS</span>
-            <h2>{home.latest.heading}</h2>
-            <p>{home.latest.text}</p>
-            <Link to={home.latest.to} className="home-hero-btn">
-              {home.latest.cta} <span>↗</span>
-            </Link>
-          </Reveal>
-
-          <div className="news-decoration">ME.</div>
-        </div>
-      </section>
+      <NewsInsightsCarousel items={latestNewsCards} />
+      <RegulatoryNewsCarousel items={regulatoryNewsCards} />
     </main>
   );
 }

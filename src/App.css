@@ -13,21 +13,6 @@
   animation: pagein 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Utility bar */
-.me-util {
-  display: flex;
-  gap: 28px;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  background: var(--ink);
-  color: #b9cfc4;
-  font-size: 13px;
-  padding: 9px 28px;
-}
-.me-util a:hover {
-  color: var(--leaf);
-}
-
 /* Navbar */
 .me-nav {
   position: sticky;
@@ -169,7 +154,8 @@
   top: 27px;
 }
 .me-burger.open span {
-  background: #fff;
+  /* The burger button stays over the white header while the drawer opens. */
+  background: var(--ink);
 }
 .me-burger.open span:nth-child(1) {
   transform: translateY(6px) rotate(45deg);
@@ -616,9 +602,6 @@
   }
   .me-band {
     padding: 64px 0;
-  }
-  .me-util {
-    justify-content: flex-start;
   }
   .me-pagehero {
     padding: 64px 0 56px;

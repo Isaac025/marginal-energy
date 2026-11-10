@@ -2,7 +2,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import "./pages.css";
 import ScrollToTop from "./components/ScrollToTop";
-import UtilityBar from "./components/UtilityBar";
+// import UtilityBar from "./components/UtilityBar";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -24,7 +24,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
-      <UtilityBar />
+      {/* <UtilityBar /> */}
       <Navbar />
       <main key={pathname} className="page">
         <Routes>
