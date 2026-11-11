@@ -179,7 +179,10 @@ export function RegulatoryNewsCarousel({ items }) {
             <span className="section-label">Investor information</span>
             <h2 id="regulatory-news-heading">Regulatory news</h2>
           </div>
-          <p>Sample announcement cards ready for your approved notices.</p>
+          <p>
+            Company announcements, financial updates, and important information
+            for investors
+          </p>
         </div>
 
         <div

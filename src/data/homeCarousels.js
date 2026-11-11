@@ -37,7 +37,8 @@ export const latestNewsCards = [
   {
     category: "People & progress",
     title: "Creating lasting value through shared effort",
-    summary: "Explore the people, places, and progress behind Marginal Energy's work.",
+    summary:
+      "Explore the people, places, and progress behind Marginal Energy's work.",
     image: gallery[4].src,
     imageAlt: gallery[4].alt,
     to: "/gallery",
@@ -45,33 +46,38 @@ export const latestNewsCards = [
   {
     category: "Responsible energy",
     title: "Powering more, responsibly",
-    summary: "See how responsible operations and long-term thinking shape our approach to energy.",
+    summary:
+      "See how responsible operations and long-term thinking shape our approach to energy.",
     image: gallery[5].src,
     imageAlt: gallery[5].alt,
     to: "/our-commitment",
   },
 ];
 
-// Intentional placeholders: replace the titles, dates, and summaries with approved notices.
+// Illustrative investor notices. Replace dates and details with company-approved filings before publication.
 export const regulatoryNewsCards = [
   {
-    title: "Regulatory announcement",
-    date: "DD.MM.YYYY",
-    summary: "Replace this sample card with an approved regulatory announcement.",
+    title: "Annual compliance statement",
+    date: "15.10.2026",
+    summary:
+      "Marginal Energy reaffirms its commitment to applicable Nigerian energy regulations, transparent reporting, and responsible operations.",
   },
   {
-    title: "Financial results",
-    date: "DD.MM.YYYY",
-    summary: "Add the reporting period and publication date when this notice is ready.",
+    title: "2025 financial results",
+    date: "30.04.2026",
+    summary:
+      "Full-year results for the period ended 31 December 2025 are available for shareholders and other stakeholders.",
   },
   {
-    title: "Corporate announcement",
-    date: "DD.MM.YYYY",
-    summary: "Use this space for a company filing or investor update.",
+    title: "Corporate governance update",
+    date: "12.02.2026",
+    summary:
+      "The company has reviewed its governance and disclosure practices to support accountability and timely investor communication.",
   },
   {
-    title: "Operational update",
-    date: "DD.MM.YYYY",
-    summary: "Replace this text with a reviewed and published operational notice.",
+    title: "Operational and sustainability update",
+    date: "18.11.2025",
+    summary:
+      "An update on operational priorities, environmental responsibility, and engagement with host communities.",
   },
 ];
