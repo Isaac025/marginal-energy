@@ -43,10 +43,10 @@
   font-size: 17px;
   transition: color 0.3s;
 }
-.me-logo img {
+/* .me-logo img {
   animation: flick 3.2s ease-in-out infinite;
   transform-origin: 50% 90%;
-}
+} */
 .me-nav.menu-open .me-logo {
   opacity: 0;
   visibility: hidden;
