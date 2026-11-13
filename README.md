@@ -1,6 +1,6 @@
 # Marginal Energy: full site
 
-React + Vite + React Router build of the Marginal Energy website, styled after seplatenergy.com.
+React + Vite + React Router build of the Marginal Energy website.
 
 ## Run it
 
